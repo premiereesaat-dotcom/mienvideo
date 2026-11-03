@@ -183,6 +183,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12evjmf240p",
+      "titre": "Un prophète",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2009,
+      "titreOriginal": "Un prophète",
+      "duree": 155,
+      "realisateur": "Jacques Audiard",
+      "genres": "Crime, Drame",
+      "acteurs": "Tahar Rahim, Niels Arestrup, Adel Bencherif, Reda Kateb, Hichem Yacoubi",
+      "synopsis": "Condamné à six ans de prison, Malik El Djebena ne sait ni lire, ni écrire. À son arrivée en Centrale, seul au monde, il paraît plus jeune, plus fragile que les autres détenus. Il a 19 ans. D'emblée, il tombe sous la coupe d'un groupe de prisonniers corses qui fait régner sa loi dans la prison. Le jeune homme apprend vite. Au fil des \"missions\", il s'endurcit et gagne la confiance des corses. Mais, très vite, Malik utilise toute son intelligence pour développer discrètement son propre réseau...",
+      "affiche": "https://image.tmdb.org/t/p/w342/bdLXfqAK17eRszckhph8IcFzxLZ.jpg",
+      "tmdbId": 21575,
+      "tmdbType": "movie",
+      "noteTmdb": 7.5,
+      "votesTmdb": 1813,
+      "ajouteLe": "2026-11-03T19:12:44.338Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
