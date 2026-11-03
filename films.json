@@ -212,6 +212,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12joo6owyb7",
+      "titre": "Stars 80",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2012,
+      "titreOriginal": "Stars 80",
+      "duree": 112,
+      "realisateur": "Frédéric Forestier, Thomas Langmann",
+      "genres": "Comédie",
+      "acteurs": "Richard Anconina, Patrick Timsit, Bruno Lochet, Lio, Jean-Luc Lahaye",
+      "synopsis": "Vincent et Antoine, deux fans des années 80, dirigent une petite société de spectacle qui fait tourner des sosies dans toute la France. Entre déboires sentimentaux et caprices de leurs pseudo vedettes, l’affaire finit par péricliter. À la veille du dépôt de bilan, ils retrouvent un carton de vieux 45 tours: Jeanne Mas, Jean-Luc Lahaye, Lio, Desireless, Peter & Sloane, François Feldman, Début de soirée, Images, Cookie Dingler, Sabrina, Gilbert Montagné... tous les tubes des années 80! Immédiatement, l’étincelle jaillit: pourquoi ne pas faire remonter sur scène les vraies Stars des années 80? Les deux producteurs partent alors en quête de ces vedettes oubliées, et montent une tournée de concerts qui débutera dans la galère avant de cartonner en province et triompher… au Stade de France!",
+      "affiche": "https://image.tmdb.org/t/p/w342/5tNdObEQBYNY1uek7yGYfzVa6H3.jpg",
+      "tmdbId": 139156,
+      "tmdbType": "movie",
+      "noteTmdb": 5.7,
+      "votesTmdb": 221,
+      "ajouteLe": "2026-11-03T19:16:28.710Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
