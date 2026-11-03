@@ -473,6 +473,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw13c8oh4x02z",
+      "titre": "Pour une poignée de dollars",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1964,
+      "titreOriginal": "Per un pugno di dollari",
+      "duree": 95,
+      "realisateur": "Sergio Leone",
+      "genres": "Western",
+      "acteurs": "Clint Eastwood, Marianne Koch, Gian Maria Volonté, Wolfgang Lukschy, Sieghardt Rupp",
+      "synopsis": "Joe, un tireur d'élite, arrive dans une bourgade mexicaine proche de la frontière, San Miguel. Deux bandes rivales, les Baxter et les Rodos, se disputent le contrôle de la région. Joe, qui assiste à un massacre de soldats mexicains par les Rodos, décide de tirer profit de la situation pour gagner quelques dollars. Il incite les bandits à se battre entre eux dans l'espoir de récupérer l'or que détient Ramon, le chef des Rodos. Un premier affrontement entre les bandits élimine une bonne partie des Baxter. Joe se charge de tuer lui-même les Rodos survivants. Une opération d'autant plus facile à imaginer que Joe a découvert le point faible du plus farouche des fils Rodos, son amour pour Marisol, une jolie Mexicaine…",
+      "affiche": "https://image.tmdb.org/t/p/w342/vrUGPFTLUMEL7nYobs6P8zJFisg.jpg",
+      "tmdbId": 391,
+      "tmdbType": "movie",
+      "noteTmdb": 7.8,
+      "votesTmdb": 4946,
+      "ajouteLe": "2026-11-03T19:38:41.009Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
