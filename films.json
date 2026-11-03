@@ -502,6 +502,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw13f6rl0032s",
+      "titre": "Mais où est donc passée la 7ème compagnie ?",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1973,
+      "titreOriginal": "Mais où est donc passée la 7ème compagnie ?",
+      "duree": 91,
+      "realisateur": "Robert Lamoureux",
+      "genres": "Comédie, Guerre",
+      "acteurs": "Pierre Mondy, Jean Lefebvre, Aldo Maccione, Érik Colin, Alain Doutey",
+      "synopsis": "Pendant la débâcle française de juin 1940, la 7ème compagnie du 106e régiment de transmissions se réfugie dans les bois, sous le commandement de son capitaine Dumont. Cependant, elle est rapidement encerclée et faite prisonnière par l’armée allemande. À l'exception de trois de ses hommes qui en réchappent, précédemment envoyés en poste d'observation, sur les hauteurs de la commune voisine, Ures (fictive), dans son cimetière. Ce sont les soldats Pithivier et Tassin, sous les ordres du sergent-chef Chaudard. Dans le civil, ils étaient respectivement : employé de mairie aux services extérieurs à la Roche-sur-Yon, ouvrier dans un abattoir de Nice et gérant d'une quincaillerie à Vesoul. Ils se retrouvent livrés à eux‐mêmes dans une France occupée dans laquelle la nourriture reste à trouver, le matériel militaire est sacré et éviter de se mettre dans les pattes des Allemands…",
+      "affiche": "https://image.tmdb.org/t/p/w342/clSsWDMsUJ49ptNkhJ0yLWyPXlU.jpg",
+      "tmdbId": 93289,
+      "tmdbType": "movie",
+      "noteTmdb": 7.3,
+      "votesTmdb": 400,
+      "ajouteLe": "2026-11-03T19:40:58.497Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
