@@ -38,6 +38,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw11xsm49smc5",
+      "titre": "Hollywoo",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2011,
+      "titreOriginal": "Hollywoo",
+      "duree": 107,
+      "realisateur": "Frédéric Berthe, Pascal Serieis",
+      "genres": "Comédie",
+      "acteurs": "Florence Foresti, Jamel Debbouze, Nikki DeLoach, Muriel Robin, Sophie Mounicot",
+      "synopsis": "Jeanne est la doubleuse française d’une actrice américaine qui joue dans une série télé à succès. Mais le jour où l’actrice américaine pète les plombs et annonce la fin de sa carrière, la vie de Jeanne bascule à son tour… Plus de travail, plus de revenu, plus rien… A moins que… A moins qu’elle ne prenne son destin en mains et ne tente a priori l’impossible : partir à Los Angeles, rencontrer la star américaine et la convaincre de reprendre la direction des plateaux de tournage… Sur place, après quelques galères, elle croise la route d’un certain Farres qui va lui ouvrir les portes du monde merveilleux mais un peu compliqué de Hollywood.",
+      "affiche": "https://image.tmdb.org/t/p/w342/oI0om8vqiiBmIifxLr73nsWBFcB.jpg",
+      "tmdbId": 80015,
+      "tmdbType": "movie",
+      "noteTmdb": 5.3,
+      "votesTmdb": 616,
+      "ajouteLe": "2026-11-03T18:59:27.388Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
