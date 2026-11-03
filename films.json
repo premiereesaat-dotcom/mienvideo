@@ -125,6 +125,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw1299bpobiou",
+      "titre": "La Mémoire dans la peau",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2002,
+      "titreOriginal": "The Bourne Identity",
+      "duree": 118,
+      "realisateur": "Doug Liman",
+      "genres": "Action, Mystère, Thriller",
+      "acteurs": "Matt Damon, Franka Potente, Chris Cooper, Clive Owen, Brian Cox",
+      "synopsis": "Un homme entre la vie et la mort est tiré de l’océan par un bateau de pêche italien. Ayant retrouvé ses esprits, il se rend compte qu’il souffre d’amnésie totale et qu’il n’a sur lui aucun papier d’identité. Les nombreux talents qu’il se découvre, techniques de combat et connaissances de plusieurs langues, lui suggèrent un passé dangereux. Aidé de la d’abord récalcitrante Marie, il s’engage dans une recherche désespérée pour retrouver son identité et la raison qui pousse d’impitoyables assassins à le traquer.",
+      "affiche": "https://image.tmdb.org/t/p/w342/fhY7ry0Ljsfg4HSJzB7bnJ0xPnc.jpg",
+      "tmdbId": 2501,
+      "tmdbType": "movie",
+      "noteTmdb": 7.5,
+      "votesTmdb": 10530,
+      "ajouteLe": "2026-11-03T19:08:22.261Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
