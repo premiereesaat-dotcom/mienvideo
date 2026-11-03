@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notre vidéothèque</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121a2b;
+  --surface:#1b2540;
+  --surface-2:#243052;
+  --line:#2f3c62;
+  --text:#edeff5;
+  --muted:#a3acc4;
+  --gold:#ffc94d;
+  --star-off:#3f4b70;
+  --bluray:#2f7bea;
+  --dvd:#4a4d55;
+  --ok:#5fcf8a;
+  --danger:#ff7a6b;
+  --radius-case:6px;
+  --radius-ui:10px;
+  --font-title:"Bricolage Grotesque", system-ui, sans-serif;
+  --font-body:"Atkinson Hyperlegible", system-ui, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.5;
+  min-height:100vh;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- En-tête ---------- */
+header.top{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:20px 24px 12px;max-width:1280px;margin:0 auto;
+}
+.brand{display:flex;align-items:baseline;gap:12px;margin-right:auto}
+.brand h1{
+  font-family:var(--font-title);font-weight:800;
+  font-size:clamp(28px,4vw,40px);line-height:1;margin:0;letter-spacing:-.02em;
+}
+.brand .count{color:var(--muted);font-size:15px}
+.me-pick{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:15px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--line);background:var(--surface);
+  padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:700;font-size:15px;
+  min-height:42px;
+}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--gold);color:#1a1404;border-color:var(--gold)}
+.btn.primary:hover{background:#ffd877}
+.btn.danger{color:var(--danger);border-color:#6b3a40;background:transparent}
+.btn.ghost{background:transparent}
+.btn.icon{padding:9px 12px}
+.btn:disabled{opacity:.5;cursor:default}
+select,input[type=text],input[type=search],input[type=number],input[type=password],input[type=url],textarea{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-ui);
+  padding:9px 12px;min-height:42px;width:100%;
+}
+textarea{min-height:120px;resize:vertical;line-height:1.5}
+select{width:auto;cursor:pointer}
+
+/* ---------- Bandeau d'état ---------- */
+.notice{
+  max-width:1280px;margin:0 auto 4px;padding:0 24px;color:var(--muted);font-size:15px;
+}
+.notice button{background:none;border:none;color:var(--gold);text-decoration:underline;cursor:pointer;padding:0}
+
+/* ---------- Barre de filtres ---------- */
+.toolbar{
+  position:sticky;top:0;z-index:5;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.toolbar-in{
+  max-width:1280px;margin:0 auto;padding:12px 24px;
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.toolbar .search{flex:1 1 240px}
+.toolbar label.check{display:flex;align-items:center;gap:8px;font-size:15px;cursor:pointer;white-space:nowrap}
+.toolbar input[type=checkbox]{width:20px;height:20px;accent-color:var(--gold)}
+
+/* ---------- Grille de boîtiers ---------- */
+main{max-width:1280px;margin:0 auto;padding:24px 24px 64px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:28px 22px;
+}
+.case{
+  all:unset;cursor:pointer;display:flex;flex-direction:column;gap:10px;min-width:0;
+}
+.case:focus-visible{outline:3px solid var(--gold);outline-offset:6px;border-radius:var(--radius-case)}
+.box{
+  position:relative;aspect-ratio:2/3.05;border-radius:var(--radius-case);
+  background:var(--dvd);padding:20px 5px 5px;
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 10px 24px -12px rgba(0,0,0,.7);
+  transition:transform .15s ease;
+}
+.case:hover .box{transform:translateY(-3px)}
+.box.bluray{background:var(--bluray)}
+.box .fmt{
+  position:absolute;top:0;left:0;right:0;height:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;letter-spacing:.04em;color:#fff;
+}
+.cover{
+  position:relative;width:100%;height:100%;border-radius:2px;overflow:hidden;
+  background:linear-gradient(160deg,#2b375c,#1a2340);
+  display:flex;align-items:flex-end;padding:10px;
+}
+.cover .ph{
+  font-family:var(--font-title);font-weight:800;font-size:19px;line-height:1.1;
+  overflow-wrap:anywhere;
+}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover img.broken{display:none}
+.case h3{
+  font-family:var(--font-title);font-weight:600;font-size:17px;line-height:1.2;margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.case .sub{color:var(--muted);font-size:14px;margin-top:-6px}
+.case .avg{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.case .loc{font-size:14px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag-tonight{
+  position:absolute;right:8px;top:28px;background:var(--gold);color:#1a1404;
+  font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;
+}
+
+/* étoiles fractionnaires (affichage seul) */
+.stars{position:relative;display:inline-block;font-size:16px;line-height:1;letter-spacing:1px;color:var(--star-off)}
+.stars::before{content:"★★★★★"}
+.stars i{position:absolute;inset:0 auto 0 0;overflow:hidden;color:var(--gold);width:calc(var(--v) / 5 * 100%);font-style:normal;white-space:nowrap}
+.stars i::before{content:"★★★★★"}
+.stars.lg{font-size:20px}
+
+.empty{
+  text-align:left;max-width:520px;padding:48px 0;
+}
+.empty h2{font-family:var(--font-title);font-size:28px;margin:0 0 8px}
+.empty p{color:var(--muted);margin:0 0 20px}
+
+/* ---------- Dialogues ---------- */
+dialog{
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);
+  padding:0;width:min(780px,calc(100vw - 32px));max-height:calc(100dvh - 48px);
+}
+dialog::backdrop{background:rgba(6,10,20,.7);backdrop-filter:blur(3px)}
+dialog[open]{animation:pop .18s ease}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.dlg-head{
+  position:sticky;top:0;z-index:2;background:var(--surface);
+  display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);
+}
+.dlg-head h2{font-family:var(--font-title);font-size:22px;margin:0;margin-right:auto;line-height:1.2}
+.dlg-body{padding:20px}
+.dlg-foot{
+  position:sticky;bottom:0;background:var(--surface);
+  display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;
+  padding:14px 20px;border-top:1px solid var(--line);
+}
+.dlg-foot .left{margin-right:auto}
+section.block{margin-top:28px}
+section.block h3{font-family:var(--font-title);font-size:19px;margin:0 0 12px}
+.hint{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+/* Fiche */
+.film-head{display:grid;grid-template-columns:170px 1fr;gap:20px;align-items:start}
+.film-head .box{padding-top:20px}
+.film-head h2{font-family:var(--font-title);font-weight:800;font-size:clamp(24px,3.4vw,32px);line-height:1.1;margin:0 0 4px}
+.film-head .orig{color:var(--muted);margin:0 0 10px;font-style:italic}
+.facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:15px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.links a{color:var(--text);font-size:14px;font-weight:700;text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.links a:hover{background:var(--surface-2)}
+.synopsis{max-width:68ch;margin:0;white-space:pre-line}
+.loc-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.loc-row input{flex:1 1 240px}
+
+.avgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.avg-item{background:var(--surface-2);border-radius:var(--radius-ui);padding:10px 14px;display:flex;flex-direction:column;gap:4px}
+.avg-item .lbl{font-size:15px}
+.avg-item .val{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+.avg-item.general{border:1px solid var(--gold)}
+
+.table-wrap{overflow-x:auto;margin-top:14px}
+table.avis{border-collapse:collapse;font-size:15px;min-width:100%}
+table.avis th,table.avis td{padding:7px 10px;text-align:center;border-bottom:1px solid var(--line)}
+table.avis th:first-child,table.avis td:first-child{text-align:left}
+table.avis th{font-weight:400;color:var(--muted)}
+table.avis tr.is-me td:first-child{font-weight:700}
+.not-yet{color:var(--muted);font-size:14px;margin-top:10px}
+
+/* Saisie des notes */
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chip{
+  border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;cursor:pointer;font-size:15px;min-height:38px;
+}
+.chip[aria-pressed=true]{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:700}
+.chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-left:6px;vertical-align:middle}
+.rate-row{display:grid;grid-template-columns:150px auto 1fr;align-items:center;gap:10px;padding:6px 0}
+.rate-label{font-size:16px}
+.rate-stars{display:flex;align-items:center;gap:2px}
+.rate-stars button{
+  border:none;background:none;cursor:pointer;padding:0;width:40px;height:40px;
+  font-size:30px;line-height:1;color:var(--star-off);
+}
+.rate-stars button.on{color:var(--gold)}
+.rate-stars .zero{
+  font-size:14px;font-weight:700;width:34px;height:34px;margin-right:6px;
+  border:1px solid var(--line);border-radius:50%;color:var(--muted);
+}
+.rate-stars .zero.on{background:var(--muted);color:var(--bg);border-color:var(--muted)}
+@media (hover:hover){
+  .rate-stars:hover .star{color:var(--gold)}
+  .rate-stars .star:hover ~ .star,
+  .rate-stars .zero:hover ~ .star{color:var(--star-off)}
+}
+.rate-val{color:var(--muted);font-size:14px}
+.rate-actions{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.dirty-note{color:var(--gold);font-size:14px}
+
+/* Formulaire */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.form-grid .full{grid-column:1/-1}
+.field label{display:block;font-size:14px;color:var(--muted);margin-bottom:5px}
+.field select{width:100%}
+.tmdb-box{background:var(--surface-2);border-radius:var(--radius-ui);padding:14px;margin-bottom:20px}
+.tmdb-search{display:flex;gap:8px}
+.results{display:flex;flex-direction:column;gap:6px;margin-top:10px;max-height:300px;overflow:auto}
+.result{
+  display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center;text-align:left;
+  border:1px solid var(--line);background:var(--surface);border-radius:var(--radius-ui);padding:6px;cursor:pointer;
+}
+.result:hover{border-color:var(--gold)}
+.result img,.result .noimg{width:46px;height:69px;object-fit:cover;border-radius:3px;background:var(--line)}
+.result strong{display:block}
+.result span{color:var(--muted);font-size:14px}
+
+/* Réglages */
+.settings h3{font-family:var(--font-title);font-size:19px;margin:28px 0 10px}
+.settings h3:first-child{margin-top:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.test-out{font-size:14px;margin-top:8px;min-height:1.5em}
+.test-out.ok{color:var(--ok)}
+.test-out.err{color:var(--danger)}
+
+/* Toast */
+.toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
+  background:var(--text);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:700;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:100;max-width:calc(100vw - 32px);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.error{background:var(--danger);color:#1a0603}
+.saving{position:fixed;top:0;left:0;right:0;height:3px;background:var(--gold);transform-origin:left;animation:load 1.2s ease-in-out infinite;z-index:101}
+@keyframes load{0%{transform:scaleX(0)}50%{transform:scaleX(.7)}100%{transform:scaleX(1);opacity:0}}
+
+footer{max-width:1280px;margin:0 auto;padding:0 24px 40px;color:var(--muted);font-size:13px}
+footer a{color:var(--muted)}
+
+@media (max-width:640px){
+  header.top{padding:16px 16px 8px}
+  .toolbar-in{padding:10px 16px}
+  main{padding:18px 16px 56px}
+  footer{padding:0 16px 32px}
+  .notice{padding:0 16px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:22px 14px}
+  .toolbar select{flex:1 1 40%}
+  dialog{width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;border-radius:0;margin:0}
+  .film-head{grid-template-columns:110px 1fr;gap:14px}
+  .form-grid,.row2{grid-template-columns:1fr}
+  .rate-row{grid-template-columns:1fr;gap:2px;padding:8px 0}
+  .rate-val{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <h1>Notre vidéothèque</h1>
+    <span class="count" id="count"></span>
+  </div>
+  <label class="me-pick">Je suis
+    <select id="meSelect" aria-label="Qui êtes-vous ?"></select>
+  </label>
+  <button class="btn primary" id="addBtn">+ Ajouter un film</button>
+  <button class="btn icon" id="settingsBtn" aria-label="Réglages" title="Réglages">⚙</button>
+</header>
+<p class="notice" id="notice" hidden></p>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <input class="search" type="search" id="q" placeholder="Rechercher un titre, un acteur, un emplacement…" aria-label="Rechercher">
+    <select id="fFormat" aria-label="Format"></select>
+    <select id="fLieu" aria-label="Emplacement"></select>
+    <select id="fTri" aria-label="Trier">
+      <option value="titre">Titre (A → Z)</option>
+      <option value="ajout">Derniers ajoutés</option>
+      <option value="general">Préférés de la famille</option>
+      <option value="plaisant">Les plus plaisants</option>
+      <option value="amusant">Les plus amusants</option>
+      <option value="emouvant">Les plus émouvants</option>
+      <option value="angoissant-asc">Les moins angoissants</option>
+      <option value="angoissant-desc">Les plus angoissants</option>
+      <option value="annee">Les plus récents (année)</option>
+    </select>
+    <label class="check"><input type="checkbox" id="fANoter"> À noter par moi</label>
+  </div>
+</div>
+
+<main>
+  <div id="grid" class="grid" aria-live="polite"></div>
+</main>
+
+<footer>
+  Synopsis, affiches et notes des spectateurs : <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>.
+  This product uses the TMDB API but is not endorsed or certified by TMDB.
+</footer>
+
+<!-- Fiche d'un film -->
+<dialog id="detailDlg" aria-labelledby="detailTitle">
+  <div class="dlg-head">
+    <h2 id="detailTitle" class="sr">Fiche</h2>
+    <span style="margin-right:auto"></span>
+    <button class="btn" id="editBtn">Modifier la fiche</button>
+    <button class="btn icon ghost" data-close aria-label="Fermer">✕</button>
+  </div>
+  <div class="dlg-body" id="detailBody"></div>
+</dialog>
+
+<!-- Ajout / modification -->
+<dialog id="formDlg" aria-labelledby="formTitle">
+  <form id="filmForm" novalidate>
+    <div class="dlg-head">
+      <h2 id="formTitle">Ajouter un film</h2>
+      <button type="button" class="btn icon ghost" data-close aria-label="Fermer">✕</button>
+    </div>
+    <div class="dlg-body">
+      <div class="tmdb-box">
+        <div class="tmdb-search">
+          <input type="search" id="tmdbQ" placeholder="Titre à chercher sur TMDB" aria-label="Titre à chercher">
+          <button type="button" class="btn" id="tmdbGo">Chercher</button>
+        </div>
+        <p class="hint" id="tmdbHint">Choisissez le bon film dans la liste : le synopsis, l'affiche et les infos se remplissent tout seuls.</p>
+        <div class="results" id="tmdbResults"></div>
+      </div>
+      <div class="form-grid">
+        <div class="field full"><label for="f_titre">Titre *</label><input type="text" id="f_titre" required></div>
+        <div class="field"><label for="f_format">Format</label><select id="f_format"></select></div>
+        <div class="field"><label for="f_emplacement">Emplacement (facultatif)</label><input type="text" id="f_emplacement" list="lieuxList" placeholder="Ex. Salon, étagère 2"></div>
+        <div class="field"><label for="f_type">Type</label>
+          <select id="f_type"><option value="film">Film</option><option value="serie">Série</option></select></div>
+        <div class="field"><label for="f_annee">Année</label><input type="number" id="f_annee" min="1890" max="2100"></div>
+        <div class="field"><label for="f_titreOriginal">Titre original</label><input type="text" id="f_titreOriginal"></div>
+        <div class="field"><label for="f_duree">Durée (minutes)</label><input type="number" id="f_duree" min="1"></div>
+        <div class="field"><label for="f_realisateur">Réalisation</label><input type="text" id="f_realisateur"></div>
+        <div class="field"><label for="f_genres">Genres</label><input type="text" id="f_genres" placeholder="Comédie, Aventure"></div>
+        <div class="field full"><label for="f_acteurs">Acteurs principaux</label><input type="text" id="f_acteurs"></div>
+        <div class="field full"><label for="f_synopsis">Synopsis</label><textarea id="f_synopsis"></textarea></div>
+        <div class="field full"><label for="f_affiche">Adresse de l'affiche (image)</label><input type="url" id="f_affiche"></div>
+      </div>
+    </div>
+    <div class="dlg-foot">
+      <button type="button" class="btn danger left" id="deleteBtn" hidden>Supprimer</button>
+      <button type="button" class="btn ghost" data-close>Annuler</button>
+      <button type="submit" class="btn primary" id="formSave">Ajouter</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Réglages -->
+<dialog id="settingsDlg" aria-labelledby="settingsTitle">
+  <div class="dlg-head">
+    <h2 id="settingsTitle">Réglages</h2>
+    <button class="btn icon ghost" data-close aria-label="Fermer">✕</button>
+  </div>
+  <div class="dlg-body settings">
+    <p id="settingsMsg" class="hint" hidden></p>
+
+    <h3>Rejoindre la vidéothèque</h3>
+    <p class="hint" style="margin-top:0">Si quelqu'un de la famille vous a envoyé un code, collez-le ici : tout est réglé d'un coup.</p>
+    <textarea id="s_code" style="min-height:70px" placeholder="Code commençant par VIDEO1:"></textarea>
+    <div style="margin-top:8px"><button class="btn" id="applyCode">Utiliser ce code</button></div>
+
+    <h3>Accès GitHub (pour enregistrer)</h3>
+    <div class="row2">
+      <div class="field"><label for="s_owner">Compte GitHub</label><input type="text" id="s_owner" autocomplete="off"></div>
+      <div class="field"><label for="s_repo">Dépôt</label><input type="text" id="s_repo" autocomplete="off"></div>
+      <div class="field"><label for="s_branch">Branche</label><input type="text" id="s_branch" autocomplete="off"></div>
+      <div class="field"><label for="s_path">Fichier de données</label><input type="text" id="s_path" autocomplete="off"></div>
+      <div class="field" style="grid-column:1/-1"><label for="s_token">Jeton d'accès GitHub</label><input type="password" id="s_token" autocomplete="off" placeholder="github_pat_…"></div>
+    </div>
+    <p class="hint">Le jeton reste sur cet appareil. Sans jeton, on peut consulter la vidéothèque mais pas la modifier.</p>
+
+    <h3>Fiches automatiques (TMDB)</h3>
+    <div class="field"><label for="s_tmdb">Clé d'API ou jeton de lecture TMDB</label><input type="password" id="s_tmdb" autocomplete="off"></div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <button class="btn primary" id="saveSettings">Enregistrer les réglages</button>
+      <button class="btn" id="testSettings">Tester</button>
+    </div>
+    <div class="test-out" id="testOut" role="status"></div>
+
+    <h3>Inviter un membre de la famille</h3>
+    <p class="hint" style="margin-top:0">Copie un code contenant le jeton GitHub et la clé TMDB. Envoyez-le uniquement en message privé : il donne le droit de modifier la vidéothèque.</p>
+    <div style="margin-top:8px"><button class="btn" id="copyCode">Copier le code d'invitation</button></div>
+
+    <h3>Sauvegarde</h3>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="downloadJson">Télécharger films.json</button>
+      <button class="btn danger" id="forget">Oublier les réglages sur cet appareil</button>
+    </div>
+  </div>
+</dialog>
+
+<datalist id="lieuxList"></datalist>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* ================= Constantes ================= */
+const CRITERES = [
+  { k: "plaisant",   label: "Plaisant",     emo: "😊" },
+  { k: "amusant",    label: "Amusant",      emo: "😂" },
+  { k: "angoissant", label: "Angoissant",   emo: "😱" },
+  { k: "emouvant",   label: "Émouvant",     emo: "🥲" },
+  { k: "general",    label: "Avis général", emo: "⭐" },
+];
+const MEMBRES_DEFAUT = ["Martha", "Rémi", "Danuta", "Bernard", "Stéphane", "Lucie", "Eva", "Jeanne"];
+const FORMATS = ["DVD", "Blu-ray", "Blu-ray 4K", "Coffret DVD", "Coffret Blu-ray", "Autre"];
+const IMG = "https://image.tmdb.org/t/p/";
+const LS_KEY = "videotheque.reglages.v1";
+const SANS_LIEU = "__aucun__";
+
+/* ================= Outils ================= */
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const norm = (s) => String(s ?? "").normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+const fr1 = (n) => n.toFixed(1).replace(".", ",");
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const uid = () => "f" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const isBluray = (f) => /blu/i.test(f || "");
+
+function b64encode(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+function b64decode(b64) {
+  const bin = atob(String(b64).replace(/\s/g, ""));
+  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+}
+
+let toastTimer;
+function toast(msg, type = "") {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.className = "toast show " + type;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.className = "toast " + type, type === "error" ? 6000 : 2600);
+}
+
+/* ================= Réglages (stockés sur l'appareil) ================= */
+function detectRepo() {
+  const h = location.hostname;
+  if (!h.endsWith(".github.io")) return {};
+  const owner = h.replace(/\.github\.io$/, "");
+  const seg = location.pathname.split("/").filter(Boolean)[0];
+  return { owner, repo: seg && !seg.includes(".") ? seg : h };
+}
+function loadCfg() {
+  let c = {};
+  try { c = JSON.parse(localStorage.getItem(LS_KEY) || "{}"); } catch (e) {}
+  const auto = detectRepo();
+  return {
+    owner: c.owner || auto.owner || "",
+    repo: c.repo || auto.repo || "",
+    branch: c.branch || "main",
+    path: c.path || "films.json",
+    token: c.token || "",
+    tmdbKey: c.tmdbKey || "",
+    me: c.me || "",
+  };
+}
+function saveCfg() { try { localStorage.setItem(LS_KEY, JSON.stringify(cfg)); } catch (e) {} }
+let cfg = loadCfg();
+const canWrite = () => !!(cfg.owner && cfg.repo && cfg.token);
+
+/* ================= État ================= */
+const state = {
+  data: { version: 1, membres: MEMBRES_DEFAUT.slice(), films: [] },
+  loaded: false,
+  loadError: "",
+  saving: 0,
+  detail: null, // { id, member, draft, dirty }
+  form: null,   // { id|null, tmdb: {...} }
+};
+
+function emptyData() { return { version: 1, membres: MEMBRES_DEFAUT.slice(), films: [] }; }
+function normalize(d) {
+  d = d && typeof d === "object" ? d : {};
+  if (!Array.isArray(d.membres) || !d.membres.length) d.membres = MEMBRES_DEFAUT.slice();
+  if (!Array.isArray(d.films)) d.films = [];
+  d.version = d.version || 1;
+  for (const f of d.films) {
+    if (!f.id) f.id = uid();
+    if (!f.notes || typeof f.notes !== "object") f.notes = {};
+  }
+  return d;
+}
+const membres = () => state.data.membres;
+const findFilm = (id, d = state.data) => d.films.find(f => f.id === id);
+
+/* ================= GitHub ================= */
+function ghUrl() {
+  const path = cfg.path.split("/").map(encodeURIComponent).join("/");
+  return `https://api.github.com/repos/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/contents/${path}`;
+}
+function ghHeaders(extra = {}) {
+  return {
+    Accept: "application/vnd.github+json",
+    Authorization: "Bearer " + cfg.token.trim(),
+    "X-GitHub-Api-Version": "2022-11-28",
+    ...extra,
+  };
+}
+async function ghError(res) {
+  let detail = "";
+  try { detail = (await res.json()).message || ""; } catch (e) {}
+  const msgs = {
+    401: "GitHub refuse le jeton (expiré ou mal copié). Vérifiez-le dans les réglages.",
+    403: "Le jeton n'a pas le droit d'écrire dans ce dépôt (permission « Contents : Read and write » manquante).",
+    404: "Dépôt ou fichier introuvable. Vérifiez le compte, le dépôt et la branche dans les réglages.",
+  };
+  const e = new Error(msgs[res.status] || `Erreur GitHub ${res.status} ${detail}`);
+  e.status = res.status;
+  return e;
+}
+async function ghGet() {
+  const url = ghUrl() + "?ref=" + encodeURIComponent(cfg.branch);
+  const res = await fetch(url, { headers: ghHeaders(), cache: "no-store" });
+  if (res.status === 404) {
+    // Le fichier n'existe pas encore : on vérifie que le dépôt, lui, existe.
+    const repo = await fetch(`https://api.github.com/repos/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}`, { headers: ghHeaders(), cache: "no-store" });
+    if (!repo.ok) throw await ghError(repo);
+    return { data: emptyData(), sha: null };
+  }
+  if (!res.ok) throw await ghError(res);
+  const meta = await res.json();
+  let text;
+  if (meta.content && meta.encoding === "base64") {
+    text = b64decode(meta.content);
+  } else {
+    // Fichier de plus de 1 Mo : on le lit en version brute.
+    const raw = await fetch(url, { headers: ghHeaders({ Accept: "application/vnd.github.raw+json" }), cache: "no-store" });
+    if (!raw.ok) throw await ghError(raw);
+    text = await raw.text();
+  }
+  return { data: normalize(JSON.parse(text)), sha: meta.sha };
+}
+async function ghPut(data, sha, message) {
+  const body = { message, content: b64encode(JSON.stringify(data, null, 2) + "\n"), branch: cfg.branch };
+  if (sha) body.sha = sha;
+  const res = await fetch(ghUrl(), {
+    method: "PUT",
+    headers: ghHeaders({ "Content-Type": "application/json" }),
+    body: JSON.stringify(body),
+  });
+  if (res.status === 409 || res.status === 422) {
+    const e = new Error("Conflit d'enregistrement");
+    e.conflict = true;
+    throw e;
+  }
+  if (!res.ok) throw await ghError(res);
+  return res.json();
+}
+
+/* Enregistre une modification : on relit toujours la dernière version,
+   on applique le changement, puis on écrit. Si quelqu'un a enregistré
+   entre-temps, on recommence : les modifications des autres ne sont jamais écrasées. */
+async function commit(message, mutate) {
+  if (!canWrite()) {
+    openSettings("Pour enregistrer, ajoutez d'abord le jeton GitHub (ou collez le code d'invitation reçu).");
+    throw new Error("lecture seule");
+  }
+  setSaving(+1);
+  try {
+    for (let attempt = 0; attempt < 4; attempt++) {
+      const { data, sha } = await ghGet();
+      if (mutate(data) === false) throw new Error("Ce film a été supprimé entre-temps.");
+      try {
+        await ghPut(data, sha, message);
+        state.data = data;
+        render();
+        refreshDetail();
+        return true;
+      } catch (e) {
+        if (!e.conflict || attempt === 3) throw e;
+        await sleep(500 * (attempt + 1));
+      }
+    }
+  } catch (e) {
+    if (e.message !== "lecture seule") toast(e.message, "error");
+    throw e;
+  } finally {
+    setSaving(-1);
+  }
+}
+function setSaving(d) {
+  state.saving += d;
+  let bar = $(".saving");
+  if (state.saving > 0 && !bar) { bar = document.createElement("div"); bar.className = "saving"; document.body.append(bar); }
+  if (state.saving <= 0 && bar) bar.remove();
+}
+
+/* ================= Chargement ================= */
+async function loadData() {
+  state.loadError = "";
+  try {
+    if (canWrite()) {
+      state.data = (await ghGet()).data;
+    } else {
+      const res = await fetch(cfg.path + "?t=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) throw new Error(`Le fichier ${cfg.path} est introuvable à côté de la page.`);
+      state.data = normalize(await res.json());
+    }
+  } catch (e) {
+    state.loadError = e.message;
+  }
+  state.loaded = true;
+  render();
+}
+
+/* ================= TMDB ================= */
+async function tmdb(path, params = {}) {
+  const key = cfg.tmdbKey.trim();
+  if (!key) throw new Error("Ajoutez une clé TMDB dans les réglages pour chercher automatiquement.");
+  const u = new URL("https://api.themoviedb.org/3" + path);
+  for (const [k, v] of Object.entries(params)) u.searchParams.set(k, v);
+  const headers = { accept: "application/json" };
+  if (key.startsWith("eyJ")) headers.Authorization = "Bearer " + key;
+  else u.searchParams.set("api_key", key);
+  const res = await fetch(u, { headers });
+  if (res.status === 401) throw new Error("TMDB refuse la clé. Vérifiez-la dans les réglages.");
+  if (!res.ok) throw new Error("TMDB ne répond pas (erreur " + res.status + ").");
+  return res.json();
+}
+async function tmdbSearch(q) {
+  const r = await tmdb("/search/multi", { query: q, language: "fr-FR", include_adult: "false" });
+  return (r.results || []).filter(x => x.media_type === "movie" || x.media_type === "tv").slice(0, 12);
+}
+async function tmdbDetails(type, id) {
+  const d = await tmdb(`/${type}/${id}`, { language: "fr-FR", append_to_response: "credits" });
+  if (!d.overview) {
+    try { d.overview = (await tmdb(`/${type}/${id}`, { language: "en-US" })).overview || ""; } catch (e) {}
+  }
+  const movie = type === "movie";
+  const crew = (d.credits && d.credits.crew) || [];
+  const cast = (d.credits && d.credits.cast) || [];
+  const date = movie ? d.release_date : d.first_air_date;
+  return {
+    titre: movie ? d.title : d.name,
+    titreOriginal: movie ? d.original_title : d.original_name,
+    type: movie ? "film" : "serie",
+    annee: date ? +date.slice(0, 4) : "",
+    duree: movie ? (d.runtime || "") : ((d.episode_run_time || [])[0] || ""),
+    realisateur: movie
+      ? crew.filter(c => c.job === "Director").map(c => c.name).join(", ")
+      : (d.created_by || []).map(c => c.name).join(", "),
+    acteurs: cast.slice(0, 5).map(c => c.name).join(", "),
+    genres: (d.genres || []).map(g => g.name).join(", "),
+    synopsis: d.overview || "",
+    affiche: d.poster_path ? IMG + "w342" + d.poster_path : "",
+    tmdbId: d.id,
+    tmdbType: type,
+    noteTmdb: d.vote_average ? Math.round(d.vote_average * 10) / 10 : null,
+    votesTmdb: d.vote_count || 0,
+  };
+}
+
+/* ================= Calculs ================= */
+function moyenne(film, k) {
+  const vals = Object.values(film.notes || {}).map(n => n && n[k]).filter(v => typeof v === "number");
+  return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+}
+const nbAvis = (film) => Object.values(film.notes || {}).filter(n => n && Object.values(n).some(v => typeof v === "number")).length;
+const aNote = (film, m) => { const n = film.notes && film.notes[m]; return !!(n && Object.values(n).some(v => typeof v === "number")); };
+const lieux = () => [...new Set(state.data.films.map(f => (f.emplacement || "").trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"));
+const starsHtml = (v, cls = "") => `<span class="stars ${cls}" style="--v:${v ?? 0}" aria-hidden="true"><i></i></span>`;
+
+/* ================= Affichage de la liste ================= */
+function render() {
+  // « Je suis »
+  const ms = $("#meSelect");
+  ms.innerHTML = `<option value="">Choisir…</option>` + membres().map(m => `<option ${m === cfg.me ? "selected" : ""}>${esc(m)}</option>`).join("");
+
+  // Filtres
+  const fF = $("#fFormat"), curF = fF.value;
+  const formats = [...new Set(state.data.films.map(f => f.format).filter(Boolean))];
+  fF.innerHTML = `<option value="">Tous les formats</option>` + formats.map(f => `<option ${f === curF ? "selected" : ""}>${esc(f)}</option>`).join("");
+  const fL = $("#fLieu"), curL = fL.value;
+  fL.innerHTML = `<option value="">Tous les emplacements</option>` +
+    lieux().map(l => `<option ${l === curL ? "selected" : ""}>${esc(l)}</option>`).join("") +
+    `<option value="${SANS_LIEU}" ${curL === SANS_LIEU ? "selected" : ""}>Sans emplacement</option>`;
+  $("#lieuxList").innerHTML = lieux().map(l => `<option value="${esc(l)}">`).join("");
+  $("#fANoter").disabled = !cfg.me;
+
+  // Compteur
+  const films = state.data.films;
+  const nBR = films.filter(f => isBluray(f.format)).length;
+  $("#count").textContent = films.length
+    ? `${films.length} titre${films.length > 1 ? "s" : ""}, dont ${nBR} Blu-ray`
+    : "";
+
+  // Bandeau
+  const notice = $("#notice");
+  if (state.loadError) {
+    notice.hidden = false;
+    notice.innerHTML = `Impossible de charger la vidéothèque : ${esc(state.loadError)} <button data-open-settings>Ouvrir les réglages</button>`;
+  } else if (state.loaded && !canWrite()) {
+    notice.hidden = false;
+    notice.innerHTML = `Mode consultation : pour ajouter des films ou donner votre avis, <button data-open-settings>collez votre code d'invitation</button>.`;
+  } else {
+    notice.hidden = true;
+  }
+
+  renderGrid();
+}
+
+function filtered() {
+  const q = norm($("#q").value.trim());
+  const fmt = $("#fFormat").value;
+  const lieu = $("#fLieu").value;
+  const aNoter = $("#fANoter").checked && cfg.me;
+  const tri = $("#fTri").value;
+  let list = state.data.films.filter(f => {
+    if (fmt && f.format !== fmt) return false;
+    if (lieu === SANS_LIEU ? (f.emplacement || "").trim() : (lieu && (f.emplacement || "").trim() !== lieu)) return false;
+    if (aNoter && aNote(f, cfg.me)) return false;
+    if (q) {
+      const hay = norm([f.titre, f.titreOriginal, f.realisateur, f.acteurs, f.genres, f.emplacement, f.annee].join(" "));
+      if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
+    }
+    return true;
+  });
+  const byTitle = (a, b) => (a.titre || "").localeCompare(b.titre || "", "fr", { sensitivity: "base" });
+  const byCrit = (k, dir) => (a, b) => {
+    const va = moyenne(a, k), vb = moyenne(b, k);
+    if (va == null && vb == null) return byTitle(a, b);
+    if (va == null) return 1;
+    if (vb == null) return -1;
+    return (dir === "asc" ? va - vb : vb - va) || byTitle(a, b);
+  };
+  const sorts = {
+    titre: byTitle,
+    ajout: (a, b) => (b.ajouteLe || "").localeCompare(a.ajouteLe || ""),
+    annee: (a, b) => (+b.annee || 0) - (+a.annee || 0) || byTitle(a, b),
+    general: byCrit("general"), plaisant: byCrit("plaisant"), amusant: byCrit("amusant"), emouvant: byCrit("emouvant"),
+    "angoissant-asc": byCrit("angoissant", "asc"), "angoissant-desc": byCrit("angoissant"),
+  };
+  return list.sort(sorts[tri] || byTitle);
+}
+
+function coverHtml(f) {
+  return `<div class="cover">
+      <span class="ph">${esc(f.titre)}</span>
+      ${f.affiche ? `<img src="${esc(f.affiche)}" alt="" loading="lazy">` : ""}
+    </div>`;
+}
+function boxHtml(f) {
+  return `<div class="box ${isBluray(f.format) ? "bluray" : ""}">
+      <span class="fmt">${esc(f.format || "DVD")}</span>
+      ${coverHtml(f)}
+    </div>`;
+}
+
+function renderGrid() {
+  const grid = $("#grid");
+  if (!state.loaded) { grid.innerHTML = `<p style="color:var(--muted)">Chargement de la vidéothèque…</p>`; return; }
+  if (!state.data.films.length) {
+    grid.innerHTML = `<div class="empty">
+      <h2>Les étagères sont vides</h2>
+      <p>Ajoutez votre premier DVD ou Blu-ray : tapez son titre et la fiche se remplit toute seule.</p>
+      <button class="btn primary" data-add>+ Ajouter un film</button></div>`;
+    return;
+  }
+  const list = filtered();
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><h2>Aucun film ne correspond</h2><p>Changez la recherche ou les filtres pour en voir davantage.</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map(f => {
+    const g = moyenne(f, "general"), n = nbAvis(f);
+    const sub = [f.annee, f.type === "serie" ? "Série" : ""].filter(Boolean).join(", ");
+    return `<button class="case" data-id="${esc(f.id)}" aria-label="${esc(f.titre)}">
+      ${boxHtml(f)}
+      <h3>${esc(f.titre)}</h3>
+      ${sub ? `<div class="sub">${esc(sub)}</div>` : ""}
+      <div class="avg">${g != null ? `${starsHtml(g)} ${fr1(g)}` : "Pas encore d'avis"}${n ? ` (${n})` : ""}</div>
+      ${f.emplacement ? `<div class="loc" title="${esc(f.emplacement)}">📍 ${esc(f.emplacement)}</div>` : ""}
+    </button>`;
+  }).join("");
+}
+
+/* ================= Fiche d'un film ================= */
+function openDetail(id) {
+  const f = findFilm(id);
+  if (!f) return;
+  const member = cfg.me && membres().includes(cfg.me) ? cfg.me : membres()[0];
+  state.detail = { id, member, draft: { ...(f.notes[member] || {}) }, dirty: false };
+  renderDetail();
+  const dlg = $("#detailDlg");
+  if (!dlg.open) dlg.showModal();
+  $("#detailBody").scrollTop = 0;
+}
+function refreshDetail() {
+  const d = state.detail;
+  if (!d || !$("#detailDlg").open) return;
+  const f = findFilm(d.id);
+  if (!f) { $("#detailDlg").close(); state.detail = null; return; }
+  if (!d.dirty) d.draft = { ...(f.notes[d.member] || {}) };
+  renderDetail();
+}
+
+function renderDetail() {
+  const d = state.detail, f = findFilm(d.id);
+  if (!f) return;
+  $("#detailTitle").textContent = f.titre;
+
+  const facts = [
+    ["Année", f.annee],
+    ["Durée", f.duree ? `${f.duree} min${f.type === "serie" ? " par épisode" : ""}` : ""],
+    ["Genres", f.genres],
+    [f.type === "serie" ? "Création" : "Réalisation", f.realisateur],
+    ["Avec", f.acteurs],
+    ["Spectateurs TMDB", f.noteTmdb ? `${fr1(f.noteTmdb)} / 10 (${f.votesTmdb} votes)` : ""],
+  ].filter(x => x[1]);
+
+  const allocine = `https://www.allocine.fr/rechercher/?q=${encodeURIComponent(f.titre)}`;
+  const tmdbLink = f.tmdbId ? `https://www.themoviedb.org/${f.tmdbType || "movie"}/${f.tmdbId}?language=fr-FR` : "";
+
+  const rated = membres().filter(m => aNote(f, m));
+  const notYet = membres().filter(m => !aNote(f, m));
+
+  $("#detailBody").innerHTML = `
+    <div class="film-head">
+      ${boxHtml(f)}
+      <div>
+        <h2>${esc(f.titre)}</h2>
+        ${f.titreOriginal && f.titreOriginal !== f.titre ? `<p class="orig">${esc(f.titreOriginal)}</p>` : ""}
+        <dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+        <div class="links">
+          <a href="${allocine}" target="_blank" rel="noopener">Critiques sur AlloCiné</a>
+          ${tmdbLink ? `<a href="${tmdbLink}" target="_blank" rel="noopener">Fiche TMDB</a>` : ""}
+        </div>
+      </div>
+    </div>
+
+    ${f.synopsis ? `<section class="block"><h3>Synopsis</h3><p class="synopsis">${esc(f.synopsis)}</p></section>` : ""}
+
+    <section class="block">
+      <h3>Emplacement</h3>
+      <div class="loc-row">
+        <input type="text" id="locInput" list="lieuxList" value="${esc(f.emplacement || "")}" placeholder="Ex. Salon, étagère 2 (facultatif)" aria-label="Emplacement">
+        <button class="btn" id="locSave">Enregistrer l'emplacement</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <h3>L'avis de la famille</h3>
+      ${rated.length ? `
+        <div class="avgs">${CRITERES.map(c => {
+          const v = moyenne(f, c.k);
+          return `<div class="avg-item ${c.k === "general" ? "general" : ""}">
+            <span class="lbl">${c.emo} ${c.label}</span>
+            <span class="val">${v != null ? `${starsHtml(v, "lg")} ${fr1(v)}` : "—"}</span></div>`;
+        }).join("")}</div>
+        <div class="table-wrap"><table class="avis">
+          <thead><tr><th>Qui</th>${CRITERES.map(c => `<th title="${c.label}"><span aria-hidden="true">${c.emo}</span><span class="sr">${c.label}</span></th>`).join("")}</tr></thead>
+          <tbody>${rated.map(m => `<tr class="${m === cfg.me ? "is-me" : ""}"><td>${esc(m)}</td>${CRITERES.map(c => {
+            const v = f.notes[m][c.k];
+            return `<td>${typeof v === "number" ? v : "–"}</td>`;
+          }).join("")}</tr>`).join("")}</tbody>
+        </table></div>
+        ${notYet.length ? `<p class="not-yet">Pas encore donné d'avis : ${notYet.map(esc).join(", ")}</p>` : ""}
+      ` : `<p class="hint" style="margin:0">Personne n'a encore donné son avis sur ce film.</p>`}
+    </section>
+
+    <section class="block" id="rateBlock">
+      <h3>Donner son avis</h3>
+      ${renderRater(f)}
+    </section>`;
+}
+
+function renderRater(f) {
+  const d = state.detail;
+  const chips = membres().map(m => `<button class="chip" data-member="${esc(m)}" aria-pressed="${m === d.member}">${esc(m)}${aNote(f, m) ? `<span class="dot" title="A déjà donné son avis"></span>` : ""}</button>`).join("");
+  const rows = CRITERES.map(c => {
+    const v = d.draft[c.k];
+    const has = typeof v === "number";
+    return `<div class="rate-row" data-k="${c.k}">
+      <span class="rate-label">${c.emo} ${c.label}</span>
+      <div class="rate-stars" role="group" aria-label="${c.label}">
+        <button class="zero ${has && v === 0 ? "on" : ""}" data-v="0" aria-label="${c.label} : 0 étoile" aria-pressed="${has && v === 0}">0</button>
+        ${[1, 2, 3, 4, 5].map(n => `<button class="star ${has && v >= n ? "on" : ""}" data-v="${n}" aria-label="${c.label} : ${n} étoile${n > 1 ? "s" : ""}" aria-pressed="${has && v === n}">★</button>`).join("")}
+      </div>
+      <span class="rate-val">${has ? `${v} / 5` : "non noté"}</span>
+    </div>`;
+  }).join("");
+  return `<div class="chips" role="group" aria-label="Qui donne son avis ?">${chips}</div>
+    ${rows}
+    <p class="hint">Touchez à nouveau la même étoile pour effacer une note.</p>
+    <div class="rate-actions">
+      <button class="btn primary" id="rateSave" ${d.dirty ? "" : "disabled"}>Enregistrer l'avis de ${esc(d.member)}</button>
+      ${d.dirty ? `<span class="dirty-note">Avis pas encore enregistré</span>` : ""}
+    </div>`;
+}
+function rerenderRater() {
+  const f = findFilm(state.detail.id);
+  $("#rateBlock").innerHTML = `<h3>Donner son avis</h3>` + renderRater(f);
+}
+
+async function saveNotes() {
+  const d = state.detail, f = findFilm(d.id);
+  const member = d.member;
+  const clean = {};
+  for (const c of CRITERES) if (typeof d.draft[c.k] === "number") clean[c.k] = d.draft[c.k];
+  const who = cfg.me && cfg.me !== member ? `${cfg.me} (pour ${member})` : member;
+  try {
+    d.dirty = false; // la fiche se réaffichera avec les données enregistrées
+    await commit(`${who} donne son avis sur « ${f.titre} »`, data => {
+      const film = findFilm(d.id, data);
+      if (!film) return false;
+      if (Object.keys(clean).length) film.notes[member] = clean; else delete film.notes[member];
+    });
+    toast(`Avis de ${member} enregistré`);
+  } catch (e) {
+    d.dirty = true;
+    if (state.detail) rerenderRater();
+  }
+}
+
+async function saveLocation() {
+  const id = state.detail.id, f = findFilm(id);
+  const val = $("#locInput").value.trim();
+  if (val === (f.emplacement || "")) { toast("L'emplacement n'a pas changé"); return; }
+  try {
+    await commit(`Emplacement de « ${f.titre} » : ${val || "aucun"}`, data => {
+      const film = findFilm(id, data);
+      if (!film) return false;
+      if (val) film.emplacement = val; else delete film.emplacement;
+    });
+    toast("Emplacement enregistré");
+  } catch (e) {}
+}
+
+/* ================= Formulaire ajout / modification ================= */
+const FIELDS = ["titre", "format", "emplacement", "type", "annee", "titreOriginal", "duree", "realisateur", "genres", "acteurs", "synopsis", "affiche"];
+
+function openForm(id = null) {
+  const f = id ? findFilm(id) : null;
+  state.form = { id, tmdb: f ? { tmdbId: f.tmdbId, tmdbType: f.tmdbType, noteTmdb: f.noteTmdb, votesTmdb: f.votesTmdb } : {} };
+  $("#formTitle").textContent = f ? "Modifier la fiche" : "Ajouter un film";
+  $("#formSave").textContent = f ? "Enregistrer les modifications" : "Ajouter";
+  $("#deleteBtn").hidden = !f;
+  $("#f_format").innerHTML = FORMATS.map(x => `<option>${x}</option>`).join("");
+  for (const k of FIELDS) $("#f_" + k).value = f ? (f[k] ?? "") : "";
+  if (!f) { $("#f_format").value = "DVD"; $("#f_type").value = "film"; }
+  else if (f.format && !FORMATS.includes(f.format)) $("#f_format").insertAdjacentHTML("beforeend", `<option selected>${esc(f.format)}</option>`);
+  $("#tmdbQ").value = f ? f.titre : "";
+  $("#tmdbResults").innerHTML = "";
+  $("#tmdbHint").textContent = cfg.tmdbKey
+    ? (f ? "Pour mettre à jour les infos, cherchez le film et choisissez-le : le format, l'emplacement et les avis sont conservés." : "Choisissez le bon film dans la liste : le synopsis, l'affiche et les infos se remplissent tout seuls.")
+    : "Ajoutez une clé TMDB dans les réglages pour remplir les fiches automatiquement. Vous pouvez aussi tout saisir à la main.";
+  $("#formDlg").showModal();
+  (f ? $("#f_titre") : $("#tmdbQ")).focus();
+}
+
+async function runTmdbSearch() {
+  const q = $("#tmdbQ").value.trim();
+  const box = $("#tmdbResults");
+  if (!q) { $("#tmdbQ").focus(); return; }
+  box.innerHTML = `<p class="hint">Recherche…</p>`;
+  try {
+    const res = await tmdbSearch(q);
+    if (!res.length) { box.innerHTML = `<p class="hint">Aucun résultat pour « ${esc(q)} ». Essayez le titre original ou saisissez la fiche à la main.</p>`; return; }
+    box.innerHTML = res.map(r => {
+      const movie = r.media_type === "movie";
+      const title = movie ? r.title : r.name;
+      const date = (movie ? r.release_date : r.first_air_date) || "";
+      const orig = movie ? r.original_title : r.original_name;
+      const deja = state.data.films.some(f => f.tmdbId === r.id && f.id !== state.form.id);
+      return `<button type="button" class="result" data-tmdb="${r.media_type}:${r.id}">
+        ${r.poster_path ? `<img src="${IMG}w92${esc(r.poster_path)}" alt="">` : `<span class="noimg"></span>`}
+        <span><strong>${esc(title)}</strong>
+        <span>${[date.slice(0, 4), movie ? "Film" : "Série", orig && orig !== title ? orig : "", deja ? "déjà dans la vidéothèque" : ""].filter(Boolean).map(esc).join(", ")}</span></span>
+      </button>`;
+    }).join("");
+  } catch (e) {
+    box.innerHTML = `<p class="hint" style="color:var(--danger)">${esc(e.message)}</p>`;
+  }
+}
+
+async function pickTmdb(btn) {
+  const [type, id] = btn.dataset.tmdb.split(":");
+  const box = $("#tmdbResults");
+  box.innerHTML = `<p class="hint">Récupération de la fiche…</p>`;
+  try {
+    const info = await tmdbDetails(type, +id);
+    for (const k of FIELDS) if (k in info && k !== "format" && k !== "emplacement") $("#f_" + k).value = info[k] ?? "";
+    state.form.tmdb = { tmdbId: info.tmdbId, tmdbType: info.tmdbType, noteTmdb: info.noteTmdb, votesTmdb: info.votesTmdb };
+    box.innerHTML = `<p class="hint" style="color:var(--ok)">Fiche remplie avec « ${esc(info.titre)} ». Vérifiez le format et l'emplacement, puis enregistrez.</p>`;
+  } catch (e) {
+    box.innerHTML = `<p class="hint" style="color:var(--danger)">${esc(e.message)}</p>`;
+  }
+}
+
+function readForm() {
+  const o = {};
+  for (const k of FIELDS) {
+    let v = $("#f_" + k).value.trim();
+    if (k === "annee" || k === "duree") v = v ? parseInt(v, 10) || "" : "";
+    if (v !== "") o[k] = v;
+  }
+  const t = state.form.tmdb || {};
+  for (const k of ["tmdbId", "tmdbType", "noteTmdb", "votesTmdb"]) if (t[k] != null && t[k] !== "") o[k] = t[k];
+  return o;
+}
+
+async function submitForm(ev) {
+  ev.preventDefault();
+  const vals = readForm();
+  if (!vals.titre) { toast("Indiquez au moins le titre", "error"); $("#f_titre").focus(); return; }
+  const editId = state.form.id;
+  const btn = $("#formSave");
+  btn.disabled = true;
+  try {
+    if (editId) {
+      await commit(`${cfg.me || "Quelqu'un"} modifie la fiche « ${vals.titre} »`, data => {
+        const film = findFilm(editId, data);
+        if (!film) return false;
+        for (const k of [...FIELDS, "tmdbId", "tmdbType", "noteTmdb", "votesTmdb"]) {
+          if (k in vals) film[k] = vals[k]; else delete film[k];
+        }
+      });
+      $("#formDlg").close();
+      toast("Fiche enregistrée");
+    } else {
+      if (vals.tmdbId && state.data.films.some(f => f.tmdbId === vals.tmdbId) &&
+          !confirm("Ce film est déjà dans la vidéothèque. L'ajouter quand même (par exemple dans un autre format) ?")) { btn.disabled = false; return; }
+      const film = { id: uid(), ...vals, ajouteLe: new Date().toISOString(), notes: {} };
+      if (cfg.me) film.ajoutePar = cfg.me;
+      await commit(`${cfg.me || "Quelqu'un"} ajoute « ${vals.titre} »`, data => { data.films.push(film); });
+      $("#formDlg").close();
+      toast(`« ${vals.titre} » ajouté`);
+      openDetail(film.id);
+    }
+  } catch (e) {
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function deleteFilm() {
+  const id = state.form.id, f = findFilm(id);
+  if (!f || !confirm(`Supprimer « ${f.titre} » et tous les avis donnés dessus ?`)) return;
+  try {
+    await commit(`${cfg.me || "Quelqu'un"} supprime « ${f.titre} »`, data => {
+      const i = data.films.findIndex(x => x.id === id);
+      if (i < 0) return false;
+      data.films.splice(i, 1);
+    });
+    $("#formDlg").close();
+    if ($("#detailDlg").open) { state.detail = null; $("#detailDlg").close(); }
+    toast(`« ${f.titre} » supprimé`);
+  } catch (e) {}
+}
+
+/* ================= Réglages ================= */
+function openSettings(msg = "") {
+  const m = $("#settingsMsg");
+  m.hidden = !msg;
+  m.textContent = msg;
+  $("#s_owner").value = cfg.owner;
+  $("#s_repo").value = cfg.repo;
+  $("#s_branch").value = cfg.branch;
+  $("#s_path").value = cfg.path;
+  $("#s_token").value = cfg.token;
+  $("#s_tmdb").value = cfg.tmdbKey;
+  $("#s_code").value = "";
+  $("#testOut").textContent = "";
+  $("#testOut").className = "test-out";
+  if (!$("#settingsDlg").open) $("#settingsDlg").showModal();
+}
+function readSettings() {
+  cfg.owner = $("#s_owner").value.trim();
+  cfg.repo = $("#s_repo").value.trim();
+  cfg.branch = $("#s_branch").value.trim() || "main";
+  cfg.path = $("#s_path").value.trim().replace(/^\/+/, "") || "films.json";
+  cfg.token = $("#s_token").value.trim();
+  cfg.tmdbKey = $("#s_tmdb").value.trim();
+}
+async function testSettings() {
+  readSettings();
+  const out = $("#testOut");
+  out.className = "test-out";
+  out.textContent = "Test en cours…";
+  const lines = [];
+  let ok = true;
+  if (canWrite()) {
+    try { const r = await ghGet(); lines.push(`GitHub : connexion réussie (${r.data.films.length} titres).`); }
+    catch (e) { ok = false; lines.push("GitHub : " + e.message); }
+  } else lines.push("GitHub : pas de jeton, consultation seulement.");
+  if (cfg.tmdbKey) {
+    try { await tmdb("/configuration"); lines.push("TMDB : clé acceptée."); }
+    catch (e) { ok = false; lines.push("TMDB : " + e.message); }
+  } else lines.push("TMDB : pas de clé, fiches à remplir à la main.");
+  out.className = "test-out " + (ok ? "ok" : "err");
+  out.textContent = lines.join(" ");
+}
+
+/* ================= Événements ================= */
+document.addEventListener("click", (e) => {
+  const t = e.target;
+  const closeBtn = t.closest("[data-close]");
+  if (closeBtn) { closeBtn.closest("dialog").close(); return; }
+  if (t.closest("[data-open-settings]")) { openSettings(); return; }
+  if (t.closest("[data-add]")) { openForm(); return; }
+  const card = t.closest(".case[data-id]");
+  if (card) { openDetail(card.dataset.id); return; }
+  const res = t.closest(".result[data-tmdb]");
+  if (res) { pickTmdb(res); return; }
+
+  if (!state.detail || !t.closest("#detailDlg")) return;
+  const chip = t.closest(".chip[data-member]");
+  if (chip) {
+    const d = state.detail;
+    if (chip.dataset.member === d.member) return;
+    if (d.dirty && !confirm(`L'avis de ${d.member} n'est pas enregistré. Passer quand même à ${chip.dataset.member} ?`)) return;
+    d.member = chip.dataset.member;
+    d.draft = { ...(findFilm(d.id).notes[d.member] || {}) };
+    d.dirty = false;
+    rerenderRater();
+    return;
+  }
+  const star = t.closest(".rate-stars button");
+  if (star) {
+    const k = star.closest(".rate-row").dataset.k, v = +star.dataset.v;
+    const d = state.detail;
+    if (d.draft[k] === v) delete d.draft[k]; else d.draft[k] = v;
+    d.dirty = true;
+    rerenderRater();
+    const again = $(`#rateBlock .rate-row[data-k="${k}"] button[data-v="${v}"]`);
+    if (again) again.focus();
+    return;
+  }
+  if (t.closest("#rateSave")) { saveNotes(); return; }
+  if (t.closest("#locSave")) { saveLocation(); return; }
+});
+
+// Image d'affiche introuvable : on garde le titre affiché à la place
+document.addEventListener("error", (e) => { if (e.target.tagName === "IMG") e.target.classList.add("broken"); }, true);
+
+$("#addBtn").onclick = () => openForm();
+$("#settingsBtn").onclick = () => openSettings();
+$("#editBtn").onclick = () => state.detail && openForm(state.detail.id);
+$("#meSelect").onchange = (e) => { cfg.me = e.target.value; saveCfg(); render(); };
+for (const id of ["#q", "#fFormat", "#fLieu", "#fTri", "#fANoter"]) $(id).addEventListener("input", renderGrid);
+
+$("#detailDlg").addEventListener("cancel", (e) => {
+  if (state.detail && state.detail.dirty && !confirm("L'avis n'est pas enregistré. Fermer quand même ?")) e.preventDefault();
+});
+$("#detailDlg").addEventListener("close", () => { state.detail = null; });
+$("#detailDlg").addEventListener("click", (e) => {
+  // Fermer avec la croix : même vérification que la touche Échap
+  if (e.target.closest("[data-close]") && state.detail && state.detail.dirty) {
+    if (!confirm("L'avis n'est pas enregistré. Fermer quand même ?")) { e.stopPropagation(); e.preventDefault(); }
+  }
+}, true);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && e.target.id === "locInput") { e.preventDefault(); saveLocation(); }
+  if (e.key === "Enter" && e.target.id === "tmdbQ") { e.preventDefault(); runTmdbSearch(); }
+});
+
+$("#filmForm").addEventListener("submit", submitForm);
+$("#tmdbGo").onclick = runTmdbSearch;
+$("#deleteBtn").onclick = deleteFilm;
+
+$("#saveSettings").onclick = async () => {
+  readSettings(); saveCfg();
+  $("#settingsDlg").close();
+  toast("Réglages enregistrés");
+  state.loaded = false; render(); await loadData();
+};
+$("#testSettings").onclick = testSettings;
+$("#copyCode").onclick = async () => {
+  readSettings();
+  if (!canWrite()) { toast("Renseignez d'abord le compte, le dépôt et le jeton GitHub", "error"); return; }
+  const code = "VIDEO1:" + b64encode(JSON.stringify({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch, path: cfg.path, token: cfg.token, tmdbKey: cfg.tmdbKey }));
+  try { await navigator.clipboard.writeText(code); toast("Code copié : envoyez-le en message privé"); }
+  catch (e) { $("#s_code").value = code; $("#s_code").select(); toast("Copiez le code affiché dans la case du haut"); }
+};
+$("#applyCode").onclick = async () => {
+  const raw = $("#s_code").value.trim();
+  try {
+    if (!raw.startsWith("VIDEO1:")) throw new Error();
+    const c = JSON.parse(b64decode(raw.slice(7)));
+    Object.assign(cfg, { owner: c.owner || "", repo: c.repo || "", branch: c.branch || "main", path: c.path || "films.json", token: c.token || "", tmdbKey: c.tmdbKey || "" });
+    saveCfg();
+    $("#settingsDlg").close();
+    toast("Bienvenue ! Choisissez votre prénom en haut de la page.");
+    state.loaded = false; render(); await loadData();
+  } catch (e) {
+    toast("Ce code n'est pas valide : vérifiez qu'il a été copié en entier", "error");
+  }
+};
+$("#downloadJson").onclick = () => {
+  const blob = new Blob([JSON.stringify(state.data, null, 2) + "\n"], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "films.json";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$("#forget").onclick = () => {
+  if (!confirm("Effacer le jeton GitHub, la clé TMDB et votre prénom de cet appareil ? La vidéothèque elle-même n'est pas touchée.")) return;
+  try { localStorage.removeItem(LS_KEY); } catch (e) {}
+  location.reload();
+};
+
+/* ================= Démarrage ================= */
+render();
+loadData();
+</script>
+</body>
+</html>
