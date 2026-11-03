@@ -444,6 +444,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw136shczt4gb",
+      "titre": "…Et pour quelques dollars de plus",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1965,
+      "titreOriginal": "Per qualche dollaro in più",
+      "duree": 130,
+      "realisateur": "Sergio Leone",
+      "genres": "Western",
+      "acteurs": "Clint Eastwood, Lee Van Cleef, Gian Maria Volonté, Mara Krupp, Luigi Pistilli",
+      "synopsis": "« L'indien », bandit cruel et fou, s'est évadé de prison. Il se prépare à attaquer la banque d'El Paso, la mieux gardée de tout l'Ouest, avec une quinzaine d'autres malfaiteurs. Le « Manchot » et le Colonel Douglas Mortimer, deux chasseurs de primes concurrents, décident, après une confrontation tendue, de faire finalement équipe pour arrêter les bandits. Mais leurs motivations ne sont pas forcément les mêmes…",
+      "affiche": "https://image.tmdb.org/t/p/w342/dei0MF0dWPOLRGWNXa0LTJG8mtv.jpg",
+      "tmdbId": 938,
+      "tmdbType": "movie",
+      "noteTmdb": 8,
+      "votesTmdb": 4679,
+      "ajouteLe": "2026-11-03T19:34:26.736Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
