@@ -328,6 +328,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12v9yxlomhu",
+      "titre": "Magnum Force",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1973,
+      "titreOriginal": "Magnum Force",
+      "duree": 125,
+      "realisateur": "Ted Post",
+      "genres": "Drame, Crime, Action",
+      "acteurs": "Clint Eastwood, Hal Holbrook, Mitchell Ryan, David Soul, Felton Perry",
+      "synopsis": "De nombreux assassinats sont commis à San Francisco. Les victimes : des proxénètes, des trafiquants de drogue ou des criminels. L'inspecteur Harry est chargé de l'affaire. Son supérieur Briggs le déteste. Harry va bientôt découvrir pourquoi.",
+      "affiche": "https://image.tmdb.org/t/p/w342/k8v7xdiKZIgVAhxMdre9HT7iLuE.jpg",
+      "tmdbId": 10648,
+      "tmdbType": "movie",
+      "noteTmdb": 7.1,
+      "votesTmdb": 1278,
+      "ajouteLe": "2026-11-03T19:25:29.529Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
