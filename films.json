@@ -357,6 +357,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12y7n81nkjo",
+      "titre": "La Dernière Cible",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1988,
+      "titreOriginal": "The Dead Pool",
+      "duree": 92,
+      "realisateur": "Buddy Van Horn",
+      "genres": "Action, Crime, Drame, Thriller",
+      "acteurs": "Clint Eastwood, Patricia Clarkson, Liam Neeson, Evan C. Kim, Jim Carrey",
+      "synopsis": "L'inspecteur Harry Callahan continue son chemin pour faire régner l'ordre et la justice. À présent, les médias s'intéressent à lui, après l'avoir dédaigné pendant très longtemps. Au même moment, de terribles meurtres ont lieu dans le milieu des films pornographiques, et une étrange liste survient où sont annoncés les noms des futures cibles. L'inspecteur Harry y figure aussi...",
+      "affiche": "https://image.tmdb.org/t/p/w342/wtxQKq36klDmEeFCu3qBZOpLWOw.jpg",
+      "tmdbId": 10651,
+      "tmdbType": "movie",
+      "noteTmdb": 6.3,
+      "votesTmdb": 999,
+      "ajouteLe": "2026-11-03T19:27:46.484Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
