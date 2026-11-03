@@ -67,6 +67,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw123i8b1j5b3",
+      "titre": "La Mort dans la peau",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2004,
+      "titreOriginal": "The Bourne Supremacy",
+      "duree": 108,
+      "realisateur": "Paul Greengrass",
+      "genres": "Action, Drame, Thriller",
+      "acteurs": "Matt Damon, Franka Potente, Brian Cox, Julia Stiles, Karl Urban",
+      "synopsis": "Depuis deux ans, l'ex‐agent / tueur à gages de la CIA Jason Bourne et sa compagne Marie ont réussi à tromper leurs poursuivants au prix d'une vigilance sans faille. Ce paisible village de Goa aurait dû être leur dernier refuge. Vain espoir. Deux ans plus tôt, Jason avait juré de se venger de quiconque le relancerait. Il tiendra parole.",
+      "affiche": "https://image.tmdb.org/t/p/w342/7pXKWSHGVb9eHoXgEZZnRZVM3gi.jpg",
+      "tmdbId": 2502,
+      "tmdbType": "movie",
+      "noteTmdb": 7.3,
+      "votesTmdb": 8524,
+      "ajouteLe": "2026-11-03T19:03:53.867Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
