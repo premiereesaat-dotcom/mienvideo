@@ -299,6 +299,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12sd2gxruoj",
+      "titre": "L'inspecteur ne renonce jamais",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1976,
+      "titreOriginal": "The Enforcer",
+      "duree": 96,
+      "realisateur": "James Fargo",
+      "genres": "Crime, Action, Thriller, Drame",
+      "acteurs": "Clint Eastwood, Tyne Daly, Harry Guardino, Bradford Dillman, John Mitchum",
+      "synopsis": "L'inspecteur Harry Callahan ne sait plus où donner de la tête. Il lutte à la fois contre des gangsters et des terroristes et doit subir des chefs butés et parfois compromis. De multiples affaires s'entrecroisent dont il se sort avec brio, laissant quelques cadavres sur son chemin.",
+      "affiche": "https://image.tmdb.org/t/p/w342/ikDt8xchquPysYcISQ8XNDMcJSj.jpg",
+      "tmdbId": 10649,
+      "tmdbType": "movie",
+      "noteTmdb": 6.7,
+      "votesTmdb": 1054,
+      "ajouteLe": "2026-11-03T19:23:13.576Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
