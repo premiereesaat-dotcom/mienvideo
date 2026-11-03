@@ -241,6 +241,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12mgnm56m2o",
+      "titre": "L'Inspecteur Harry",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1971,
+      "titreOriginal": "Dirty Harry",
+      "duree": 102,
+      "realisateur": "Don Siegel",
+      "genres": "Action, Crime, Thriller",
+      "acteurs": "Clint Eastwood, Harry Guardino, Reni Santoni, John Vernon, Andrew Robinson",
+      "synopsis": "Un tueur inconnu menace de poursuivre une série d'assassinats si la police de San Francisco ne lui remet pas immédiatement 200.000 dollars. L'inspecteur Harry Callahan, aux méthodes expéditives mais efficaces, le traque.",
+      "affiche": "https://image.tmdb.org/t/p/w342/xBx2ja8ljWjS0jPgyyeQ3jDX1es.jpg",
+      "tmdbId": 984,
+      "tmdbType": "movie",
+      "noteTmdb": 7.5,
+      "votesTmdb": 2897,
+      "ajouteLe": "2026-11-03T19:18:38.290Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
