@@ -270,6 +270,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12pml7rl1h1",
+      "titre": "Le Retour de l'inspecteur Harry",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1983,
+      "titreOriginal": "Sudden Impact",
+      "duree": 117,
+      "realisateur": "Clint Eastwood",
+      "genres": "Thriller, Crime, Action",
+      "acteurs": "Clint Eastwood, Sondra Locke, Pat Hingle, Bradford Dillman, Paul Drake",
+      "synopsis": "Violée dans sa jeunesse par une bande de brutes de la petite ville de San Paulo, l'artiste peintre Jennifer Spencer décide de retrouver chacun de ses agresseurs et de les tuer. Excédée par ses méthodes et soucieuse d'éviter les foudres de la presse, l'administration policière décide d'envoyer l'inspecteur Harry Callahan loin de San Fransisco. Chargé d'enquêter sur un meurtre à San Paulo, il va faire la connaissance de Jennifer...",
+      "affiche": "https://image.tmdb.org/t/p/w342/3kTmoN3dXTritdzHOTQJc9lGLW7.jpg",
+      "tmdbId": 10650,
+      "tmdbType": "movie",
+      "noteTmdb": 6.6,
+      "votesTmdb": 1061,
+      "ajouteLe": "2026-11-03T19:21:05.947Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
