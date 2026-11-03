@@ -10,5 +10,27 @@
     "Eva",
     "Jeanne"
   ],
-  "films": []
+  "films": [
+    {
+      "id": "fmw0yu94do6v35",
+      "titre": "Le Diable par la queue",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1969,
+      "titreOriginal": "Le diable par la queue",
+      "duree": 90,
+      "realisateur": "Philippe de Broca",
+      "genres": "Comédie",
+      "acteurs": "Yves Montand, Madeleine Renaud, Maria Schell, Jean Rochefort, Jean-Pierre Marielle",
+      "synopsis": "Une famille de nobles désargentés, de connivence avec le garagiste du coin, s'arrange pour que les voyageurs de passage tombent en panne et fassent escale dans leur château. Un jour un trio insolite débarque. Ce sont en fait les auteurs d'un hold-up et la famille voudrait bien s'approprier le fruit de leur labeur.",
+      "affiche": "https://image.tmdb.org/t/p/w342/iMEUSjFaunUPiSwYnEAKlrTNI2o.jpg",
+      "tmdbId": 79446,
+      "tmdbType": "movie",
+      "noteTmdb": 6.1,
+      "votesTmdb": 57,
+      "ajouteLe": "2026-11-03T17:32:43.309Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
+    }
+  ]
 }
