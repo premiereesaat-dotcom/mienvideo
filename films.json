@@ -173,7 +173,15 @@
       "noteTmdb": 6.4,
       "votesTmdb": 1616,
       "ajouteLe": "2026-11-03T19:10:42.795Z",
-      "notes": {},
+      "notes": {
+        "Stéphane": {
+          "plaisant": 5,
+          "amusant": 3,
+          "angoissant": 2,
+          "emouvant": 4,
+          "general": 5
+        }
+      },
       "ajoutePar": "Stéphane"
     }
   ]
