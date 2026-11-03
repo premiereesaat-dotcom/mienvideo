@@ -154,6 +154,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw12c9rf7sia9",
+      "titre": "Space Cowboys",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2000,
+      "titreOriginal": "Space Cowboys",
+      "duree": 130,
+      "realisateur": "Clint Eastwood",
+      "genres": "Action, Aventure, Thriller",
+      "acteurs": "Clint Eastwood, Tommy Lee Jones, Donald Sutherland, James Garner, James Cromwell",
+      "synopsis": "En 1958, les astronautes Frank Corvin, Hawk Hawkins, Jerry O'Neill et Tank Sullivan se préparent pour une mission spatiale mais au dernier moment, la NASA leur préfère un singe.  42 ans plus tard, le satellite russe de communication Ikon menace de s’écraser sur la Terre. Corvin est le seul homme capable de maîtriser l'antique système de guidage, calqué sur celui qu'il avait conçu quelques décennies plus tôt pour Skylab. Il accepte la mission, à condition que ses 3 compagnons partent avec lui…",
+      "affiche": "https://image.tmdb.org/t/p/w342/cqCqe8rGvNIYvS9FXKS1VVrxRZX.jpg",
+      "tmdbId": 5551,
+      "tmdbType": "movie",
+      "noteTmdb": 6.4,
+      "votesTmdb": 1616,
+      "ajouteLe": "2026-11-03T19:10:42.795Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
