@@ -386,6 +386,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmw130q48c4qzo",
+      "titre": "Il était une fois dans l'Ouest",
+      "format": "DVD",
+      "type": "film",
+      "annee": 1968,
+      "titreOriginal": "C'era una volta il West",
+      "duree": 166,
+      "realisateur": "Sergio Leone",
+      "genres": "Drame, Western",
+      "acteurs": "Claudia Cardinale, Henry Fonda, Jason Robards, Charles Bronson, Gabriele Ferzetti",
+      "synopsis": "Alors que les constructeurs de chemins de fer traversent sans relâche le désert de l'Arizona en direction de la mer, Jill arrive dans la petite ville de Flagstone avec l'intention de commencer une nouvelle vie.",
+      "affiche": "https://image.tmdb.org/t/p/w342/xjXKy5b2M3fDelAQItIswcDNvwm.jpg",
+      "tmdbId": 335,
+      "tmdbType": "movie",
+      "noteTmdb": 8.3,
+      "votesTmdb": 5117,
+      "ajouteLe": "2026-11-03T19:29:43.736Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
