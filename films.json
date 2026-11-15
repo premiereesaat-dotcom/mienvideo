@@ -552,6 +552,27 @@
       "ajouteLe": "2026-11-15T07:18:54.001Z",
       "notes": {},
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmwhi89om993ow",
+      "titre": "Tomb Raider",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2018,
+      "titreOriginal": "Tomb Raider",
+      "duree": 118,
+      "realisateur": "Roar Uthaug",
+      "genres": "Action, Aventure",
+      "acteurs": "Alicia Vikander, Dominic West, Walton Goggins, Daniel Wu, Kristin Scott Thomas",
+      "synopsis": "Lara Croft, 21 ans, n'a ni projet, ni ambition : fille d'un explorateur excentrique porté disparu depuis sept ans, cette jeune femme rebelle et indépendante refuse de reprendre l'empire de son père. Convaincue qu'il n'est pas mort, elle met le cap sur la destination où son père a été vu pour la dernière fois : la tombe légendaire d'une île mythique au large du Japon. Mais le voyage se révèle des plus périlleux et il lui faudra affronter d'innombrables ennemis et repousser ses propres limites pour devenir \"Tomb Raider\"…",
+      "affiche": "https://image.tmdb.org/t/p/w342/ltOkXWOYZoYstuKrMq44yogotHp.jpg",
+      "tmdbId": 338970,
+      "tmdbType": "movie",
+      "noteTmdb": 6.4,
+      "votesTmdb": 8620,
+      "ajouteLe": "2026-11-15T07:19:48.742Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
