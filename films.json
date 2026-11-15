@@ -564,7 +564,15 @@
       "noteTmdb": 6.5,
       "votesTmdb": 4812,
       "ajouteLe": "2026-11-15T07:18:54.001Z",
-      "notes": {},
+      "notes": {
+        "Eva": {
+          "plaisant": 3,
+          "amusant": 0,
+          "angoissant": 4,
+          "emouvant": 3,
+          "general": 4
+        }
+      },
       "ajoutePar": "Stéphane"
     },
     {
