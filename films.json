@@ -531,6 +531,27 @@
         }
       },
       "ajoutePar": "Stéphane"
+    },
+    {
+      "id": "fmwhi73g1kj8al",
+      "titre": "Le Village",
+      "format": "DVD",
+      "type": "film",
+      "annee": 2004,
+      "titreOriginal": "The Village",
+      "duree": 108,
+      "realisateur": "M. Night Shyamalan",
+      "genres": "Drame, Mystère, Thriller",
+      "acteurs": "Bryce Dallas Howard, Joaquin Phoenix, Adrien Brody, William Hurt, Sigourney Weaver",
+      "synopsis": "Une petite communauté isolée vit dans la terrifiante certitude qu'une race de créatures mythiques peuple les bois entourant le village. Cette force maléfique est si menaçante que personne n'ose s'aventurer au-delà des dernières maisons, et encore moins pénétrer dans les bois... Le jeune Lucius Hunt, un garçon entêté, est cependant bien décidé à aller voir ce qui se cache par-delà des limites du village, et son audace menace de changer à jamais l'avenir de tous...",
+      "affiche": "https://image.tmdb.org/t/p/w342/ruJDmUiMIsYJplqgKW7tbmGPNm7.jpg",
+      "tmdbId": 6947,
+      "tmdbType": "movie",
+      "noteTmdb": 6.5,
+      "votesTmdb": 4812,
+      "ajouteLe": "2026-11-15T07:18:54.001Z",
+      "notes": {},
+      "ajoutePar": "Stéphane"
     }
   ]
 }
