@@ -100,6 +100,13 @@
           "angoissant": 3,
           "emouvant": 2,
           "general": 5
+        },
+        "Eva": {
+          "plaisant": 4,
+          "amusant": 0,
+          "angoissant": 3,
+          "emouvant": 2,
+          "general": 5
         }
       },
       "ajoutePar": "Stéphane"
