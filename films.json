@@ -122,6 +122,13 @@
           "angoissant": 2,
           "emouvant": 1,
           "general": 5
+        },
+        "Eva": {
+          "plaisant": 5,
+          "amusant": 0,
+          "angoissant": 3,
+          "emouvant": 2,
+          "general": 5
         }
       },
       "ajoutePar": "Stéphane"
